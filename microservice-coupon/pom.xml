@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>microservice-coupon</artifactId>
+  <version>${microservice.coupon}</version>
+  <modules>
+    <module>microservice-coupon-gateway-9090</module>
+      <module>microservice-coupon-service</module>
+      <module>microservice-goods-service</module>
+    <module>microservice-goods-service/goods- retrieval</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>microservice-coupon</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <springcloud.alibaba.version>2.2.1.RELEASE</springcloud.alibaba.version>
+    <springcloud.version>Hoxton.SR3</springcloud.version>
+    <microservice.coupon>1.0-SNAPSHOT</microservice.coupon>
+    <commons.pool2.vesion>2.7.0</commons.pool2.vesion>
+    <HikariCP.version>2.4.13</HikariCP.version>
+    <fastjson.version>1.2.4</fastjson.version>
+    <mybatisplus.version>3.3.2</mybatisplus.version>
+    <coupon.commons.version>1.0-SNAPSHOT</coupon.commons.version>
+  </properties>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.5.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${springcloud.alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${springcloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
